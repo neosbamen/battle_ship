@@ -20,6 +20,10 @@ public class Main2 {
         Ship ship8=new Ship('.','.','.','.');
 
 
+        System.out.println("Texto test:" +
+                "" +
+                "Desde Ivan branch");
+
     }
 
     }
