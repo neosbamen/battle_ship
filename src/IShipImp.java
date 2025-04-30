@@ -87,18 +87,6 @@ public class IShipImp extends Ship implements NavalSystem {
         return false;
     }
 
-    public void boardShipShot(int shot) {
-
-        boolean existShip = shipList.get(shot - 1).getPlaced() == ('#');
-
-        if (existShip) {
-            shipList.get(shot - 1).setSuccessfulShot('O');
-            shipList.get(shot - 1).setWrongShot('.');
-        } else {
-            shipList.get(shot - 1).setWrongShot('X');
-            shipList.get(shot - 1).setSuccessfulShot('.');
-        }
-
         int newLine = 0;
 
         for (int i = 0; i < shipList.size(); i++) {
