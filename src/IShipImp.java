@@ -30,11 +30,11 @@ public class IShipImp extends Ship implements NavalSystem {
     }
 
     @Override
-    public boolean placementBoardShip(int[] place) {
+    public boolean placementBoardShip(int[] place) {//aqui puede estar un error: se cuelan espacios en blanco desde la entrada en main
 
         try {
             int howBigIs = 0;
-            int initialP = place[0];
+            int initialP = place[0]; //que pasa si el num que representa la primera posicion es mas grande que el num que respresenta la ultima
             int lastP = place[1];
             int initialCount = initialP;
 
@@ -48,7 +48,7 @@ public class IShipImp extends Ship implements NavalSystem {
                 initialCount++;
                 howBigIs++;
             }
-            boolean orientation = howBigIs >= 9;
+            boolean orientation = howBigIs >= 9; //bajo esta logica esa variable es vertical
             boolean multiploLimit = false;
             int num = initialP;
 
@@ -93,10 +93,10 @@ public class IShipImp extends Ship implements NavalSystem {
 
         if (existShip) {
             shipList.get(shot - 1).setSuccessfulShot('O');
-            shipList.get(shot - 1).setWrongShot('.');
+            //shipList.get(shot - 1).setWrongShot('.');
         } else {
             shipList.get(shot - 1).setWrongShot('X');
-            shipList.get(shot - 1).setSuccessfulShot('.');
+            //shipList.get(shot - 1).setSuccessfulShot('.');
         }
 
         int newLine = 0;
