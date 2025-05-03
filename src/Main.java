@@ -27,10 +27,12 @@ public class Main {
                     case 1:
 
                             iShipImpHuman.emptyPainting();
-                            System.out.println("Ingresa ubicacion inicial y final de tu barco separadas por comas ");
-                            String inputPlace= scanner.nextLine();
-                            String[] inputSplit = inputPlace.split(",");
-                            int[] positionByInt = new int[inputSplit.length];
+                            System.out.println("Ingresa ubicacion inicial de tu barco");
+                            String firstInputPlace= scanner.nextLine().strip();
+                            System.out.println("Ingresa ubicacion final de tu barco");
+                            String lastInputPlace= scanner.nextLine().strip();
+                            String[] inputSplit = {firstInputPlace,lastInputPlace};
+                            int[] positionByInt = new int[2];
                             /*int num=0;
                             int iterator=0;*/
                             for (int y = 0; y <positionByInt.length; y++) {
