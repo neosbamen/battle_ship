@@ -121,7 +121,7 @@ public class IShipImp extends Ship implements NavalSystem {
     }
 
     @Override
-    public boolean gameOverNotification() {
+    public boolean gameOverNotification() {//que hace esta linea?
 
         int placedCounter = 0;
         int shotCounter = 0;
