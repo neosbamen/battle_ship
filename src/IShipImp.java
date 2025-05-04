@@ -30,11 +30,11 @@ public class IShipImp extends Ship implements NavalSystem {
     }
 
     @Override
-    public boolean placementBoardShip(int[] place) {//aqui puede estar un error: se cuelan espacios en blanco desde la entrada en main
+    public boolean placementBoardShip(int[] place) {
 
         try {
             int howBigIs = 0;
-            int initialP = place[0]; //que pasa si el num que representa la primera posicion es mas grande que el num que respresenta la ultima
+            int initialP = place[0];
             int lastP = place[1];
             int initialCount = initialP;
 
@@ -66,8 +66,7 @@ public class IShipImp extends Ship implements NavalSystem {
             if (isShipVertical) {
                 System.out.println("Este barco tiene orientacion vertical y ha sido ubicado en: ");
                 while (initialP <= 81 && initialP <= lastP) {
-                    shipList.get(initialP - 1).setPlaced('#'); //
-                   // int[] barcoPosicionado = new int[];
+                    shipList.get(initialP - 1).setPlaced('#');
                     System.out.println("Posicion " + initialP);
                     initialP += 9;
                 }
