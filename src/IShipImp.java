@@ -39,8 +39,8 @@ public class IShipImp extends Ship implements NavalSystem {
             int initialCount = initialP;
 
             if (initialP>lastP){
-                System.out.println("Error al posicionar tu barco");
-                System.out.println("Vuelve a intentar");
+                System.out.println("Introduce las posiciones de tu barco en orden ascendente");
+                System.out.println("Vuelve a intentarlo");
                 return false;
             }
 
@@ -48,14 +48,14 @@ public class IShipImp extends Ship implements NavalSystem {
                 initialCount++;
                 howBigIs++;
             }
-            boolean orientation = howBigIs >= 9; //bajo esta logica esa variable es vertical
+            boolean isShipVertical = howBigIs >= 9; //Cuando sea true la logica se comportará entendiendo que el barco pretende ser vertical
             boolean multiploLimit = false;
             int num = initialP;
 
             while (num <= lastP) {
-                if (!shipList.get(num - 1).getPlaced().equals('#') && orientation) {
+                if (!shipList.get(num - 1).getPlaced().equals('#') && isShipVertical) {
                     num += 9;
-                } else if (!shipList.get(num - 1).getPlaced().equals('#') && !orientation) {
+                } else if (!shipList.get(num - 1).getPlaced().equals('#') && !isShipVertical) {
                     num++;
                 } else {
                     System.out.println("Uno o mas posiciones coinciden con una anterior");
@@ -63,17 +63,21 @@ public class IShipImp extends Ship implements NavalSystem {
                 }
             }
 
-            if (orientation) {
+            if (isShipVertical) {
+                System.out.println("Este barco tiene orientacion vertical y ha sido ubicado en: ");
                 while (initialP <= 81 && initialP <= lastP) {
-                    shipList.get(initialP - 1).setPlaced('#');
+                    shipList.get(initialP - 1).setPlaced('#'); //
+                   // int[] barcoPosicionado = new int[];
+                    System.out.println("Posicion " + initialP);
                     initialP += 9;
                 }
 
             } else {
+                System.out.println("Este barco tiene orientacion horizontal y ha sido ubicado en: ");
                 while (initialP <= lastP && !multiploLimit) {
                     shipList.get(initialP - 1).setPlaced('#');
                     multiploLimit = initialP % 9 == 0;
-
+                    System.out.println("Posicion " + initialP);
                     initialP++;
                 }
             }
