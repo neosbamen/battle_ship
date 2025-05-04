@@ -12,9 +12,10 @@ public class Main {
 
         System.out.println("Bienvenido a Ship Naval War");
         boolean stillPlaying = true;
+        int humanShipOrientationPositioning;
 
         do {
-            System.out.println("1. Ingrear Barco\n" +
+            System.out.println("1. Ingresar Barco\n" +
                     "2. Iniciar ataque\n" +
                     "3. Revisar tus posiciones\n" +
                             "4. Salir"
@@ -27,7 +28,7 @@ public class Main {
                     case 1:
 
                             iShipImpHuman.emptyPainting();
-                            System.out.println("Ingresa ubicacion inicial y final de tu barco separadas por comas ");
+                            System.out.println("Ingresa la ubicacion inicial y final en la que posicionar tu barco, separadas por comas.");
                             String inputPlace= scanner.nextLine();
                             String[] inputSplit = inputPlace.split(",");
                             int[] positionByInt = new int[inputSplit.length];
