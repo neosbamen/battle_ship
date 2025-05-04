@@ -12,7 +12,6 @@ public class Main {
 
         System.out.println("Bienvenido a Ship Naval War");
         boolean stillPlaying = true;
-        int humanShipOrientationPositioning;
 
         do {
             System.out.println("1. Ingresar Barco\n" +
@@ -34,10 +33,7 @@ public class Main {
                             String lastInputPlace= scanner.nextLine().strip();
                             String[] inputSplit = {firstInputPlace,lastInputPlace};
                             int[] positionByInt = new int[2];
-                            /*int num=0;
-                            int iterator=0;*/
                             for (int y = 0; y <positionByInt.length; y++) {
-                                //iterator++;
                                 positionByInt[y] = Integer.parseInt(inputSplit[y]);
                             }
                             boolean repeat=iShipImpHuman.placementBoardShip(positionByInt);
